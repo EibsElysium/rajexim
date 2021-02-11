@@ -1,0 +1,72 @@
+
+
+body{margin:0px;padding:0px; font-family: 'Source Sans Pro', sans-serif;}
+p,h1,h2,h3,h4,h5,h6,a,div,span,form,input{margin:0px;padding:0px;}
+h1,h2,h3,h4,h5,h6{margin:0px!important;text-transform:uppercase;padding:5px 0px;}
+p{text-align:justify;padding-bottom:10px; margin-bottom:0px!important; font-size: 15px; line-height: 18px;}
+a:hover, a:focus{text-decoration: none!important;}
+h3{font-size:20px!important; padding-bottom: 15px;}
+ul li{list-style: none;}
+
+
+/****line behind text*****/
+
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      min-height: 100px;
+    }
+    .navbar-inverse{
+      background-color: #04488b;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #04488b;
+      color: white;
+      padding: 15px;
+    }
+    
+    .feedback{padding: 30px 0px;}
+
+fieldset {
+    min-width: 0;
+    padding: 20px;
+    margin: 0 0 15px 0;
+    border: 0.5px solid #ddd;
+}
+legend {
+    display: block;
+    width: unset;
+    max-width: unset;
+    padding: 0;
+    margin-bottom: .5rem;
+    font-size: 16px;
+    line-height: inherit;
+    color: #000;
+    white-space: normal;
+    border-bottom: 0;
+}
+.navbar-header{float:unset!important;width: 100%;}
+.navbar-brand{float: unset!important;margin:0 auto;text-align: center;}
+.navbar-brand img{margin:0 auto;}
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }

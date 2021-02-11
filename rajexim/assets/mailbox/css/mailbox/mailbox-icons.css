@@ -1,0 +1,627 @@
+@font-face {
+    font-family: 'mailbox-mailbox-icons';
+    src: url('fonts/mailbox-mailbox-icons9cd8.eot?bbef6n');
+    src: url('fonts/mailbox-mailbox-icons9cd8.svg?bbef6n#mailbox-mailbox-icons') format('svg'), url('fonts/mailbox-mailbox-icons9cd8.eot?bbef6n#iefix') format('embedded-opentype'), url('fonts/mailbox-mailbox-icons9cd8.ttf?bbef6n') format('truetype'), url('fonts/mailbox-mailbox-icons9cd8.woff?bbef6n') format('woff');
+    font-weight: normal;
+    font-style: normal
+}
+[class^="mailbox-pli-"]:before,
+[class*=" mailbox-pli-"]:before,
+[class^="mailbox-psi-"]:before,
+[class*=" mailbox-psi-"]:before {
+    font-family: 'mailbox-mailbox-icons'!important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+.mailbox-pli-add:before {
+    content: "\e900"
+}
+.mailbox-pli-add-cart:before {
+    content: "\e901"
+}
+.mailbox-pli-add-user:before {
+    content: "\e902"
+}
+.mailbox-pli-add-user-plus-star:before {
+    content: "\e903"
+}
+.mailbox-pli-arrow-down:before {
+    content: "\e904"
+}
+.mailbox-pli-arrow-left:before {
+    content: "\e905"
+}
+.mailbox-pli-arrow-left-2:before {
+    content: "\e906"
+}
+.mailbox-pli-arrow-out-right:before {
+    content: "\e907"
+}
+.mailbox-pli-arrow-right:before {
+    content: "\e908"
+}
+.mailbox-pli-arrow-right-2:before {
+    content: "\e909"
+}
+.mailbox-pli-arrow-up:before {
+    content: "\e90a"
+}
+.mailbox-pli-bag-coins:before {
+    content: "\e90b"
+}
+.mailbox-pli-bell:before {
+    content: "\e90c"
+}
+.mailbox-pli-building:before {
+    content: "\e90d"
+}
+.mailbox-pli-calendar-4:before {
+    content: "\e90e"
+}
+.mailbox-pli-camera-2:before {
+    content: "\e90f"
+}
+.mailbox-pli-check:before {
+    content: "\e910"
+}
+.mailbox-pli-check2:before {
+    content: "\e911"
+}
+.mailbox-pli-checked-user:before {
+    content: "\e912"
+}
+.mailbox-pli-clock:before {
+    content: "\e913"
+}
+.mailbox-pli-coding:before {
+    content: "\e914"
+}
+.mailbox-pli-coin:before {
+    content: "\e915"
+}
+.mailbox-pli-computer-secure:before {
+    content: "\e916"
+}
+.mailbox-pli-consulting:before {
+    content: "\e917"
+}
+.mailbox-pli-credit-card-2:before {
+    content: "\e918"
+}
+.mailbox-pli-cross:before {
+    content: "\e919"
+}
+.mailbox-pli-data-settings:before {
+    content: "\e91a"
+}
+.mailbox-pli-data-storage:before {
+    content: "\e91b"
+}
+.mailbox-pli-download-from-cloud:before {
+    content: "\e91c"
+}
+.mailbox-pli-download-window:before {
+    content: "\e91d"
+}
+.mailbox-pli-exclamation:before {
+    content: "\e91e"
+}
+.mailbox-pli-exclamation-circle:before {
+    content: "\e91f"
+}
+.mailbox-pli-facebook:before {
+    content: "\e920"
+}
+.mailbox-pli-facebook-2:before {
+    content: "\e921"
+}
+.mailbox-pli-file:before {
+    content: "\e922"
+}
+.mailbox-pli-file-add:before {
+    content: "\e923"
+}
+.mailbox-pli-file-csv:before {
+    content: "\e924"
+}
+.mailbox-pli-file-edit:before {
+    content: "\e925"
+}
+.mailbox-pli-file-excel:before {
+    content: "\e926"
+}
+.mailbox-pli-file-html:before {
+    content: "\e927"
+}
+.mailbox-pli-file-jpg:before {
+    content: "\e928"
+}
+.mailbox-pli-file-text-image:before {
+    content: "\e929"
+}
+.mailbox-pli-file-txt:before {
+    content: "\e92a"
+}
+.mailbox-pli-file-word:before {
+    content: "\e92b"
+}
+.mailbox-pli-file-zip:before {
+    content: "\e92c"
+}
+.mailbox-pli-find-user:before {
+    content: "\e92d"
+}
+.mailbox-pli-fire-flame-2:before {
+    content: "\e92e"
+}
+.mailbox-pli-folder-with-document:before {
+    content: "\e92f"
+}
+.mailbox-pli-gear:before {
+    content: "\e930"
+}
+.mailbox-pli-go-top:before {
+    content: "\e931"
+}
+.mailbox-pli-google-plus:before {
+    content: "\e932"
+}
+.mailbox-pli-heart-2:before {
+    content: "\e933"
+}
+.mailbox-pli-home:before {
+    content: "\e934"
+}
+.mailbox-pli-idea-2:before {
+    content: "\e935"
+}
+.mailbox-pli-inbox-full:before {
+    content: "\e936"
+}
+.mailbox-pli-inbox-into:before {
+    content: "\e937"
+}
+.mailbox-pli-information:before {
+    content: "\e938"
+}
+.mailbox-pli-instagram:before {
+    content: "\e939"
+}
+.mailbox-pli-internet:before {
+    content: "\e93a"
+}
+.mailbox-pli-laptop:before {
+    content: "\e93b"
+}
+.mailbox-pli-layout-grid:before {
+    content: "\e93c"
+}
+.mailbox-pli-left-4:before {
+    content: "\e93d"
+}
+.mailbox-pli-like:before {
+    content: "\e93e"
+}
+.mailbox-pli-like-2:before {
+    content: "\e93f"
+}
+.mailbox-pli-location-2:before {
+    content: "\e940"
+}
+.mailbox-pli-lock-user:before {
+    content: "\e941"
+}
+.mailbox-pli-love-user:before {
+    content: "\e942"
+}
+.mailbox-pli-magnifi-glass:before {
+    content: "\e943"
+}
+.mailbox-pli-mail:before {
+    content: "\e944"
+}
+.mailbox-pli-mail-attachment:before {
+    content: "\e945"
+}
+.mailbox-pli-mail-block:before {
+    content: "\e946"
+}
+.mailbox-pli-mail-favorite:before {
+    content: "\e947"
+}
+.mailbox-pli-mail-remove:before {
+    content: "\e948"
+}
+.mailbox-pli-mail-send:before {
+    content: "\e949"
+}
+.mailbox-pli-mail-unread:before {
+    content: "\e94a"
+}
+.mailbox-pli-male:before {
+    content: "\e94b"
+}
+.mailbox-pli-male-female:before {
+    content: "\e94c"
+}
+.mailbox-pli-map:before {
+    content: "\e94d"
+}
+.mailbox-pli-map-2:before {
+    content: "\e94e"
+}
+.mailbox-pli-map-marker:before {
+    content: "\e94f"
+}
+.mailbox-pli-map-marker-2:before {
+    content: "\e950"
+}
+.mailbox-pli-medal-2:before {
+    content: "\e951"
+}
+.mailbox-pli-mine:before {
+    content: "\e952"
+}
+.mailbox-pli-monitor-2:before {
+    content: "\e953"
+}
+.mailbox-pli-office:before {
+    content: "\e954"
+}
+.mailbox-pli-old-telephone:before {
+    content: "\e955"
+}
+.mailbox-pli-paper-plane:before {
+    content: "\e956"
+}
+.mailbox-pli-paperclip:before {
+    content: "\e957"
+}
+.mailbox-pli-plus:before {
+    content: "\e958"
+}
+.mailbox-pli-printer:before {
+    content: "\e959"
+}
+.mailbox-pli-question:before {
+    content: "\e95a"
+}
+.mailbox-pli-question-circle:before {
+    content: "\e95b"
+}
+.mailbox-pli-recycling:before {
+    content: "\e95c"
+}
+.mailbox-pli-refresh:before {
+    content: "\e95d"
+}
+.mailbox-pli-reload-3:before {
+    content: "\e95e"
+}
+.mailbox-pli-remove:before {
+    content: "\e95f"
+}
+.mailbox-pli-remove-user:before {
+    content: "\e960"
+}
+.mailbox-pli-repeat-2:before {
+    content: "\e961"
+}
+.mailbox-pli-right-4:before {
+    content: "\e962"
+}
+.mailbox-pli-share:before {
+    content: "\e963"
+}
+.mailbox-pli-shopping-bag:before {
+    content: "\e964"
+}
+.mailbox-pli-shopping-basket:before {
+    content: "\e965"
+}
+.mailbox-pli-shopping-cart:before {
+    content: "\e966"
+}
+.mailbox-pli-smartphone-3:before {
+    content: "\e967"
+}
+.mailbox-pli-speech-bubble-2:before {
+    content: "\e968"
+}
+.mailbox-pli-speech-bubble-3:before {
+    content: "\e969"
+}
+.mailbox-pli-speech-bubble-4:before {
+    content: "\e96a"
+}
+.mailbox-pli-speech-bubble-5:before {
+    content: "\e96b"
+}
+.mailbox-pli-speech-bubble-7:before {
+    content: "\e96c"
+}
+.mailbox-pli-star:before {
+    content: "\e96d"
+}
+.mailbox-pli-support:before {
+    content: "\e96e"
+}
+.mailbox-pli-tablet-2:before {
+    content: "\e96f"
+}
+.mailbox-pli-tactic:before {
+    content: "\e970"
+}
+.mailbox-pli-tag:before {
+    content: "\e971"
+}
+.mailbox-pli-tag-2:before {
+    content: "\e972"
+}
+.mailbox-pli-tag-3:before {
+    content: "\e973"
+}
+.mailbox-pli-temperature:before {
+    content: "\e974"
+}
+.mailbox-pli-twitter:before {
+    content: "\e975"
+}
+.mailbox-pli-twitter-2:before {
+    content: "\e976"
+}
+.mailbox-pli-unlike:before {
+    content: "\e977"
+}
+.mailbox-pli-unlike-2:before {
+    content: "\e978"
+}
+.mailbox-pli-unlock:before {
+    content: "\e979"
+}
+.mailbox-pli-upload-to-cloud:before {
+    content: "\e97a"
+}
+.mailbox-pli-video:before {
+    content: "\e97b"
+}
+.mailbox-pli-view-list:before {
+    content: "\e97c"
+}
+.mailbox-pli-wallet-2:before {
+    content: "\e97d"
+}
+.mailbox-pli-wrench:before {
+    content: "\e97e"
+}
+.mailbox-psi-add:before {
+    content: "\e97f"
+}
+.mailbox-psi-arrow-left:before {
+    content: "\e980"
+}
+.mailbox-psi-arrow-left-2:before {
+    content: "\e981"
+}
+.mailbox-psi-arrow-right:before {
+    content: "\e982"
+}
+.mailbox-psi-arrow-right-2:before {
+    content: "\e983"
+}
+.mailbox-psi-bar-chart:before {
+    content: "\e984"
+}
+.mailbox-psi-boot-2:before {
+    content: "\e985"
+}
+.mailbox-psi-building:before {
+    content: "\e986"
+}
+.mailbox-psi-car-coins:before {
+    content: "\e987"
+}
+.mailbox-psi-close:before {
+    content: "\e988"
+}
+.mailbox-psi-computer-secure:before {
+    content: "\e989"
+}
+.mailbox-psi-consulting:before {
+    content: "\e98a"
+}
+.mailbox-psi-download-from-cloud:before {
+    content: "\e98b"
+}
+.mailbox-psi-facebook:before {
+    content: "\e98c"
+}
+.mailbox-psi-facebook-2:before {
+    content: "\e98d"
+}
+.mailbox-psi-file:before {
+    content: "\e98e"
+}
+.mailbox-psi-file-csv:before {
+    content: "\e98f"
+}
+.mailbox-psi-file-excel:before {
+    content: "\e990"
+}
+.mailbox-psi-file-html:before {
+    content: "\e991"
+}
+.mailbox-psi-file-jpg:before {
+    content: "\e992"
+}
+.mailbox-psi-file-text-image:before {
+    content: "\e993"
+}
+.mailbox-psi-file-txt:before {
+    content: "\e994"
+}
+.mailbox-psi-file-word:before {
+    content: "\e995"
+}
+.mailbox-psi-file-zip:before {
+    content: "\e996"
+}
+.mailbox-psi-folder-organizing:before {
+    content: "\e997"
+}
+.mailbox-psi-gear:before {
+    content: "\e998"
+}
+.mailbox-psi-gear-2:before {
+    content: "\e999"
+}
+.mailbox-psi-google-plus:before {
+    content: "\e99a"
+}
+.mailbox-psi-happy:before {
+    content: "\e99b"
+}
+.mailbox-psi-heart-2:before {
+    content: "\e99c"
+}
+.mailbox-psi-home:before {
+    content: "\e99d"
+}
+.mailbox-psi-idea-2:before {
+    content: "\e99e"
+}
+.mailbox-psi-inbox-full:before {
+    content: "\e99f"
+}
+.mailbox-psi-information:before {
+    content: "\e9a0"
+}
+.mailbox-psi-instagram:before {
+    content: "\e9a1"
+}
+.mailbox-psi-internet:before {
+    content: "\e9a2"
+}
+.mailbox-psi-left-4:before {
+    content: "\e9a3"
+}
+.mailbox-psi-like:before {
+    content: "\e9a4"
+}
+.mailbox-psi-lock-2:before {
+    content: "\e9a5"
+}
+.mailbox-psi-mail:before {
+    content: "\e9a6"
+}
+.mailbox-psi-mail-favorite:before {
+    content: "\e9a7"
+}
+.mailbox-psi-mail-send:before {
+    content: "\e9a8"
+}
+.mailbox-psi-mail-unread:before {
+    content: "\e9a9"
+}
+.mailbox-psi-male:before {
+    content: "\e9aa"
+}
+.mailbox-psi-medal-2:before {
+    content: "\e9ab"
+}
+.mailbox-psi-office:before {
+    content: "\e9ac"
+}
+.mailbox-psi-paperclip:before {
+    content: "\e9ad"
+}
+.mailbox-psi-pen-5:before {
+    content: "\e9ae"
+}
+.mailbox-psi-printer:before {
+    content: "\e9af"
+}
+.mailbox-psi-receipt-4:before {
+    content: "\e9b0"
+}
+.mailbox-psi-recycling:before {
+    content: "\e9b1"
+}
+.mailbox-psi-remove:before {
+    content: "\e9b2"
+}
+.mailbox-psi-repair:before {
+    content: "\e9b3"
+}
+.mailbox-psi-repeat-2:before {
+    content: "\e9b4"
+}
+.mailbox-psi-right-4:before {
+    content: "\e9b5"
+}
+.mailbox-psi-share:before {
+    content: "\e9b6"
+}
+.mailbox-psi-sidebar-window:before {
+    content: "\e9b7"
+}
+.mailbox-psi-speech-bubble-2:before {
+    content: "\e9b8"
+}
+.mailbox-psi-speech-bubble-3:before {
+    content: "\e9b9"
+}
+.mailbox-psi-speech-bubble-4:before {
+    content: "\e9ba"
+}
+.mailbox-psi-speech-bubble-5:before {
+    content: "\e9bb"
+}
+.mailbox-psi-speech-bubble-comic-2:before {
+    content: "\e9bc"
+}
+.mailbox-psi-split-vertical-2:before {
+    content: "\e9bd"
+}
+.mailbox-psi-star:before {
+    content: "\e9be"
+}
+.mailbox-psi-tactic:before {
+    content: "\e9bf"
+}
+.mailbox-psi-tag:before {
+    content: "\e9c0"
+}
+.mailbox-psi-tag-2:before {
+    content: "\e9c1"
+}
+.mailbox-psi-tag-3:before {
+    content: "\e9c2"
+}
+.mailbox-psi-thunder:before {
+    content: "\e9c3"
+}
+.mailbox-psi-twitter:before {
+    content: "\e9c4"
+}
+.mailbox-psi-twitter-2:before {
+    content: "\e9c5"
+}
+.mailbox-psi-unlike:before {
+    content: "\e9c6"
+}
+.mailbox-psi-upload-to-cloud:before {
+    content: "\e9c7"
+}
+.mailbox-psi-warning-window:before {
+    content: "\e9c8"
+}

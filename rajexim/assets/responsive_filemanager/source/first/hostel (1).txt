@@ -1,0 +1,710 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Aug 11, 2020 at 01:39 PM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 5.6.15
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `hostel`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `sno` int(12) NOT NULL,
+  `pid` mediumtext NOT NULL,
+  `category` mediumtext NOT NULL,
+  `feedback` mediumtext NOT NULL,
+  `rateit` mediumtext NOT NULL,
+  `fdate` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`sno`, `pid`, `category`, `feedback`, `rateit`, `fdate`, `status`) VALUES
+(1, 'Stu104', 'Room', 'Nice Service...', '5', '08/03/2014', 0),
+(2, 'Stu105', 'Food', 'jjghjghjghjghj', '3', '09/03/2014', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `gatpass`
+--
+
+CREATE TABLE `gatpass` (
+  `gatpass_id` int(11) NOT NULL,
+  `gatpass_code` varchar(200) NOT NULL DEFAULT '',
+  `student_id` varchar(225) NOT NULL DEFAULT '',
+  `date_of_gatepass` varchar(80) NOT NULL DEFAULT '',
+  `reason` text NOT NULL,
+  `created_by` int(11) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `care_taker_id` int(11) NOT NULL DEFAULT '0',
+  `ct_approve_date` varchar(200) NOT NULL DEFAULT '',
+  `ct_approval_by` int(11) NOT NULL DEFAULT '0',
+  `cr_reject_reason` text NOT NULL,
+  `warden_approve_date` varchar(200) NOT NULL DEFAULT '',
+  `warden_approval_by` int(11) NOT NULL DEFAULT '0',
+  `wardern_reject_reason` text NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0' COMMENT '0-fresh;1-approved_by_caretaker;2-2-ct_rejected;',
+  `w_status` int(11) NOT NULL DEFAULT '0' COMMENT '0-not recieve;1-approved_by_warden;2-warden_rejected;'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `gatpass`
+--
+
+INSERT INTO `gatpass` (`gatpass_id`, `gatpass_code`, `student_id`, `date_of_gatepass`, `reason`, `created_by`, `created_on`, `care_taker_id`, `ct_approve_date`, `ct_approval_by`, `cr_reject_reason`, `warden_approve_date`, `warden_approval_by`, `wardern_reject_reason`, `status`, `w_status`) VALUES
+(1, 'GT17072020001', 'Stu105', '15-08-2020', 'Going to temple', 0, '2020-07-17 12:09:34', 6, '2020-07-17 12:11:38', 6, '', '2020-07-17 12:14:55', 14, 'i dont like hime hahaha', 1, 2),
+(2, 'GT17072020002', 'Stu105', '15-08-2020', 'Do you want this', 0, '2020-07-17 12:15:28', 6, '2020-07-17 12:16:24', 6, 'Unwanted gatepass', '', 0, '', 2, 0),
+(3, 'GT18072020003', 'Stu105', '15-08-2020', 'test', 0, '2020-07-18 13:41:24', 6, '', 0, '', '', 0, '', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `sno` int(12) NOT NULL,
+  `id` mediumtext NOT NULL,
+  `uname` mediumtext NOT NULL,
+  `paswd` mediumtext NOT NULL,
+  `name` mediumtext NOT NULL,
+  `grp` mediumtext NOT NULL COMMENT '1-admin;2-admin_operator;3-wardan;4-'''';5-student',
+  `status` tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`sno`, `id`, `uname`, `paswd`, `name`, `grp`, `status`) VALUES
+(1, 'EMP100', 'admin', 'admin123', 'Administrator', '1', 0),
+(6, 'EMP105', 'EMP105', '123', 'Arun Kumar', '2', 0),
+(7, 'EMP106', 'EMP106', '19890101', 'Ravi sundar', '3', 1),
+(8, 'EMP107', 'EMP107', '19890114', 'Raguvaran', '4', 0),
+(9, 'EMP108', 'EMP108', '19900107', 'Sundar Ram', '5', 0),
+(18, 'Stu105', 'Stu105', '19890101', 'Ragu Ram', '5', 0),
+(17, 'Stu104', 'Stu104', '19890101', 'Arun Kumar K', '5', 0),
+(14, 'Emp111', 'Emp111', '123456', 'Prakash Raju', '3', 0),
+(15, 'Emp113', 'Emp113', '19890101', 'Prakash KJ', '4', 0),
+(16, 'Emp114', 'Emp114', '19890101', 'Anbu K', '1', 0),
+(19, 'sads', 'sads', '20150103', 'asdasd', '5', 0),
+(21, '111', '111', '20150203', 'jall', '4', 0),
+(22, 'guru1', 'guru1', '20150203', 'guru', '2', 0),
+(23, 'ff123', 'ff123', '20150203', 'fff', '3', 0),
+(24, '124312', '124312', '20153003', 'dsfdsf', '3', 0),
+(25, 'STD15263118', 'STD15263118', '19980808', 'jeganathan', '5', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `messagebox`
+--
+
+CREATE TABLE `messagebox` (
+  `sno` int(12) NOT NULL,
+  `from` mediumtext NOT NULL,
+  `to` mediumtext NOT NULL,
+  `subject` mediumtext NOT NULL,
+  `message` mediumtext NOT NULL,
+  `attachment` mediumtext NOT NULL,
+  `date` mediumtext NOT NULL,
+  `time` mediumtext NOT NULL,
+  `rdsts` int(11) NOT NULL DEFAULT '0',
+  `sts` tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `messagebox`
+--
+
+INSERT INTO `messagebox` (`sno`, `from`, `to`, `subject`, `message`, `attachment`, `date`, `time`, `rdsts`, `sts`) VALUES
+(4, 'Stu104', 'EMP100', 'Reg: Hiii', 'dsadasdasdadasdasdasdasd,<br>asdasdasdasdadasdasd,<br>asdasdasd.<br><br><br>', 'Null', '09/03/2014', '10:48:49 AM', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mess_menu`
+--
+
+CREATE TABLE `mess_menu` (
+  `sno` int(11) NOT NULL,
+  `day` mediumtext NOT NULL,
+  `mornsnaks` mediumtext NOT NULL,
+  `breakfast` mediumtext NOT NULL,
+  `lunch` mediumtext NOT NULL,
+  `evngsnaks` mediumtext NOT NULL,
+  `dinner` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mess_menu`
+--
+
+INSERT INTO `mess_menu` (`sno`, `day`, `mornsnaks`, `breakfast`, `lunch`, `evngsnaks`, `dinner`, `status`) VALUES
+(1, 'Sunday', 'Coffee', 'Idly', 'Vegetable Rice', 'Tea & Biscuits', 'Dosa and chtni', 0),
+(2, 'Monday', 'Biscuits', 'Ragi', 'Sambar Rice', 'Chips', 'Chapathi', 0),
+(3, 'Tuesday', 'Vadai', 'Ghee Rice', 'Puli Kulambu ', 'Puttu', 'Idly', 0),
+(4, 'Wednesday', 'juiece', 'Idly', 'Egg Rice', 'Paji', 'Rice', 0),
+(5, 'Thusday', 'Coffee', 'Venpongal', 'Rice ', 'Owl', 'Dosai', 0),
+(6, 'Friday', 'Coffee With Biscuits', 'Idly', 'Parupu Rice', 'Paji', 'Poori', 0),
+(7, 'Saturday', 'coffee', 'dasa', 'Rice', 'Milk', 'Rice', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `others`
+--
+
+CREATE TABLE `others` (
+  `sno` int(11) NOT NULL,
+  `date` mediumtext NOT NULL,
+  `month` int(2) UNSIGNED ZEROFILL NOT NULL,
+  `rice` mediumtext NOT NULL,
+  `milk` mediumtext NOT NULL,
+  `other` mediumtext NOT NULL,
+  `scav` mediumtext NOT NULL,
+  `oil` mediumtext NOT NULL,
+  `gas` mediumtext NOT NULL,
+  `kerosine` mediumtext NOT NULL,
+  `grossery` mediumtext NOT NULL,
+  `plumber` mediumtext NOT NULL,
+  `coconunt` mediumtext NOT NULL,
+  `fwood` mediumtext NOT NULL,
+  `fan` mediumtext NOT NULL,
+  `eb` mediumtext NOT NULL,
+  `sweepers` mediumtext NOT NULL,
+  `total` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `others`
+--
+
+INSERT INTO `others` (`sno`, `date`, `month`, `rice`, `milk`, `other`, `scav`, `oil`, `gas`, `kerosine`, `grossery`, `plumber`, `coconunt`, `fwood`, `fan`, `eb`, `sweepers`, `total`, `status`) VALUES
+(2, '2015-03-02', 03, '324', '123', '123', '1231', '123', '23123', '123', '1123', '123', '123', '123', '123123', '123', '123123', '273031', 0),
+(3, '2015-03-02', 03, '12', '56', '12', '56', '12', '56', '23', '456', '23', '45', '23', '45', '23', '34', '842', 0),
+(4, '2015-03-11', 03, '12', '2', '20', '2', '50', '2', '22', '2', '2', '2', '2', '2', '2', '2', '122', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `outstu`
+--
+
+CREATE TABLE `outstu` (
+  `sno` int(11) NOT NULL,
+  `name` mediumtext NOT NULL,
+  `outtime` mediumtext NOT NULL,
+  `intime` mediumtext NOT NULL,
+  `purpose` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `outstu`
+--
+
+INSERT INTO `outstu` (`sno`, `name`, `outtime`, `intime`, `purpose`, `status`) VALUES
+(4, 'Anbu', '12PM', '4PM', 'frgvdfbghh', 0),
+(3, 'Arun Kumar K', '12.00PM', '11.00AM', 'dfgdgdfg', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `price`
+--
+
+CREATE TABLE `price` (
+  `sno` int(11) NOT NULL,
+  `ddate` mediumtext NOT NULL,
+  `month` int(2) UNSIGNED ZEROFILL NOT NULL,
+  `veg` mediumtext NOT NULL,
+  `cks` mediumtext NOT NULL,
+  `quan` mediumtext NOT NULL,
+  `price` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `price`
+--
+
+INSERT INTO `price` (`sno`, `ddate`, `month`, `veg`, `cks`, `quan`, `price`, `status`) VALUES
+(1, '2015-03-14', 03, 'potato', 'Y', '2', '60', 0),
+(2, '2015-03-14', 03, 'tomato', 'Y', '1', '20', 0),
+(6, '2015-03-03', 03, 'potato', 'YES', '2', '60', 0),
+(7, '2015-03-03', 03, 'tomato', 'YES', '2', '40', 0),
+(8, '2015-03-03', 03, 'Large Onion', 'YES', '2', '60', 0),
+(9, '2015-03-03', 03, 'Small Onion', 'YES', '2', '80', 0),
+(10, '2015-03-03', 03, 'Chilli', 'YES', '2', '60', 0),
+(11, '2015-03-03', 03, 'Carrot', 'YES', '2', '100', 0),
+(12, '2015-03-03', 03, 'Beans', 'YES', '2', '120', 0),
+(13, '2015-03-03', 03, 'Drum Stick', 'YES', '2', '80', 0),
+(14, '2015-03-03', 03, 'Brinjal', 'YES', '2', '60', 0),
+(15, '2015-03-03', 03, 'Cabbage', 'YES', '2', '80', 0),
+(16, '2015-03-03', 03, 'Ginger', 'YES', '2', '140', 0),
+(17, '2015-03-12', 03, 'potato', 'YES', '2', '60', 0),
+(18, '2015-03-12', 03, 'tomato', 'YES', '2', '40', 0),
+(19, '2015-03-12', 03, 'Large Onion', 'YES', '1', '30', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `room`
+--
+
+CREATE TABLE `room` (
+  `sno` int(11) NOT NULL,
+  `broom` mediumtext NOT NULL,
+  `sroom` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`sno`, `broom`, `sroom`, `status`) VALUES
+(1, '7', '4', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roomallocate`
+--
+
+CREATE TABLE `roomallocate` (
+  `sno` int(11) NOT NULL,
+  `uid` mediumtext NOT NULL,
+  `type` mediumtext NOT NULL,
+  `name` mediumtext NOT NULL,
+  `roomsize` mediumtext NOT NULL,
+  `roomno` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `roomallocate`
+--
+
+INSERT INTO `roomallocate` (`sno`, `uid`, `type`, `name`, `roomsize`, `roomno`, `status`) VALUES
+(1, '', 'STAFF', 'jall', 'BIG ROOM', '1', 0),
+(2, '', 'STUDENT', 'Prakash', 'BIG ROOM', '1', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `setting`
+--
+
+CREATE TABLE `setting` (
+  `sno` int(12) NOT NULL,
+  `code` mediumtext NOT NULL,
+  `value` mediumtext NOT NULL,
+  `desc` mediumtext NOT NULL,
+  `sts` tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `setting`
+--
+
+INSERT INTO `setting` (`sno`, `code`, `value`, `desc`, `sts`) VALUES
+(1, 'EMP', '111', 'Employee Code', 0),
+(3, 'RM', '100', 'Room Number', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `site_details`
+--
+
+CREATE TABLE `site_details` (
+  `sno` int(12) NOT NULL,
+  `descrp` mediumtext NOT NULL,
+  `type` mediumtext NOT NULL,
+  `adate` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `site_details`
+--
+
+INSERT INTO `site_details` (`sno`, `descrp`, `type`, `adate`, `status`) VALUES
+(1, 'WIFI Environment<br>', 'Feature', '28/01/2014', 0),
+(2, '24/7 Water Suplly<br>', 'Feature', '24/01/2014', 0),
+(3, 'Canteen Available<br>', 'Feature', '24/01/2014', 0),
+(4, 'Bus Facility<br>', 'Feature', '24/01/2014', 0),
+(5, '24/7 Security<br>', 'Feature', '24/01/2014', 0),
+(15, 'Special Day/<b>Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s,asasdasdasdasd</b>', 'News', '09/03/2014', 0),
+(8, 'The hostel is under the direct control of the Warden. The Principal is the Warden and is assisted by the Deputy Warden in the day-to-day administration of the hostels. Student representatives also assist the warden in running the hostel effectively,in terms of facilities and amenities. The Men''s Hostel is located inside the campus and consists of two separate blocks. All the rooms are well furnished. The accommodation facility available in our hostel is for about 210 students. Two more seperate blocks with a spacious dining hall have been constructed. Women''s Hostel is Functioning in Madurai City with an intake capacity of 150.<br>', 'About', '18/03/2015', 0),
+(16, 'College Anual Day/<b><b><b>Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s,</b></b></b>', 'News', '09/03/2014', 0),
+(17, 'Hostel Day/<b>Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s,</b>', 'News', '09/03/2014', 0),
+(19, '<b></b><b><font color="#660000">dsfdf</font></b><b><span style="color: #ff00ff;"><strong></strong></span></b>', 'Contact', '18/03/2015', 0),
+(28, 'rgtret', 'Feature', '18/03/2015', 0),
+(29, 'ukjhkjhk', 'Feature', '18/03/2015', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff`
+--
+
+CREATE TABLE `staff` (
+  `sno` int(12) NOT NULL,
+  `name` mediumtext NOT NULL,
+  `id` mediumtext NOT NULL,
+  `gender` mediumtext NOT NULL,
+  `dob` mediumtext NOT NULL,
+  `age` mediumtext NOT NULL,
+  `doj` mediumtext NOT NULL,
+  `mailid` mediumtext NOT NULL,
+  `phoneno` mediumtext NOT NULL,
+  `address` mediumtext NOT NULL,
+  `pimg` mediumtext NOT NULL,
+  `grp` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`sno`, `name`, `id`, `gender`, `dob`, `age`, `doj`, `mailid`, `phoneno`, `address`, `pimg`, `grp`, `status`) VALUES
+(2, 'jall', '111', 'Male', '03/02/2015', '', '03/02/2015', 'admin@gmail.com', '123123', 'wsdeasdasd', 'img/staff/46amazing-3d-water-art-desktop-wallpaper-(2).jpg', '4', 0),
+(3, 'guru', 'guru1', 'Male', '03/02/2015', '', '03/01/2015', 'admin@buddyzone.com', '123123', 'dasfcsfds', 'img/staff/33Chrysanthemum.jpg', '2', 0),
+(4, 'fff', 'ff123', 'Male', '03/02/2015', '', '03/02/2015', 'dasdasd@gmail.com', '435435', 'wsdeads', 'img/staff/05Penguins.jpg', '3', 0),
+(5, 'dsfdsf', '124312', 'Male', '03/30/2015', '', '03/01/2015', 'sdasd', 'sdasdas', 'dasdasdasdas', 'img/staff/01Penguins.jpg', '3', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `sno` int(12) NOT NULL,
+  `care_taker_id` int(11) NOT NULL DEFAULT '6' COMMENT 'Login group No 2 persons shown here',
+  `name` mediumtext NOT NULL,
+  `pname` mediumtext NOT NULL,
+  `pmobile` mediumtext NOT NULL,
+  `pmailid` mediumtext NOT NULL,
+  `stuid` mediumtext NOT NULL,
+  `year` mediumtext NOT NULL,
+  `duration` mediumtext NOT NULL,
+  `department` mediumtext NOT NULL,
+  `batch` mediumtext NOT NULL,
+  `gender` mediumtext NOT NULL,
+  `dob` mediumtext NOT NULL,
+  `mailid` mediumtext NOT NULL,
+  `contactno` mediumtext NOT NULL,
+  `address` mediumtext NOT NULL,
+  `pimg` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`sno`, `care_taker_id`, `name`, `pname`, `pmobile`, `pmailid`, `stuid`, `year`, `duration`, `department`, `batch`, `gender`, `dob`, `mailid`, `contactno`, `address`, `pimg`, `status`) VALUES
+(1, 6, 'Prakash', 'Ravi A', '77775435453', 'ravi@gmail.com', 'Stu100', 'III', '2013-2017 ', 'Computer Science Engineering', '2013', 'Male', '01/01/1989', 'd@gmail.com', '9874441125', 'bbbbbbbbbbbbbb.\r\nbbbbbbbbbbbb.\r\nbbbbbbb.\r\n', 'img/staff/17Ajith Kumar 7.jpg', 0),
+(2, 6, 'Anbu', 'Ravi K', '77775435453', 'ravi@gmail.com', 'Stu101', 'III', '2013-2017', 'Information Technology', '2013', 'Male', '01/01/1989', 'a@gmail.com', '9874441125', 'asdasdasdasdasdasdasd,\r\nasdasdasdasdasd,\r\n', 'img/student/22images.jpg', 1),
+(6, 6, 'Arun Kumar K', 'Ravi Chandran M', '77775435451', 'ravi@gmail.com', 'Stu104', 'I', '2014-2018', 'Computer Science Engineering', '2014', 'Female', '01/01/1989', 'akumar@gmail.com', '9874441125', 'asdasdadasdadasd,\r\nadasdasdasd,\r\nasdasdasd\r\nasdasd.', 'img/staff/05Penguins.jpg', 1),
+(7, 6, 'Ragu Ram', 'Ravi Kumar A', '77775435451', 'raviK@gmail.com', 'Stu105', 'I', '2014-2018', 'Information Technology', '2014', 'Male', '01/01/1989', 'a@gmail.com', '9874441125', 'asdasdsadasdasdasd,\r\nadasdasdasdd,\r\nadasdasd.', 'img/student/48Depositphotos_6357651_M.jpg', 0),
+(8, 6, 'asdasd', 'rgfgffh', '65436456', 'dfds@gmail.com', 'sads', 'I', '3', 'Computer Science Engineering', '2014', 'Male', '03/01/2015', 'dasdasd@gmail.com', '56456', 'vcbvcbvcb', 'img/student/071798498.jpg', 0),
+(9, 22, 'jeganathan', 'Meena', '9952536310', 'test@gmail.com', 'STD15263118', 'I', '595', 'Computer Science Engineering', '2015-2018', 'Male', '08/08/1998', 'jegans797@gmail.com', '8525050312', 'test street, test area, test - 625002', 'img/staff/26', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stu_atten`
+--
+
+CREATE TABLE `stu_atten` (
+  `sno` int(12) NOT NULL,
+  `sid` mediumtext NOT NULL,
+  `name` mediumtext NOT NULL,
+  `year` mediumtext NOT NULL,
+  `depart` mediumtext NOT NULL,
+  `adate` mediumtext NOT NULL,
+  `astatus` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT '0'
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `stu_atten`
+--
+
+INSERT INTO `stu_atten` (`sno`, `sid`, `name`, `year`, `depart`, `adate`, `astatus`, `status`) VALUES
+(1, 'Stu100', 'Prakash', 'I', 'Computer Science Engineering', '11/02/2014', 'Present', 0),
+(2, 'Stu101', 'Anbu', 'I', 'Information Technology', '11/02/2014', 'Absent', 0),
+(3, 'Stu104', 'Arun Kumar K', 'I', 'Computer Science Engineering', '11/02/2014', 'Leave', 0),
+(4, 'Stu105', 'Ragu Ram', 'I', 'Information Technology', '11/02/2014', 'Permisson', 0),
+(5, 'Stu100', 'Prakash', 'I', 'Computer Science Engineering', '12/02/2014', 'Present', 0),
+(6, 'Stu101', 'Anbu', 'I', 'Information Technology', '12/02/2014', 'Absent', 0),
+(7, 'Stu104', 'Arun Kumar K', 'I', 'Computer Science Engineering', '12/02/2014', 'Absent', 0),
+(8, 'Stu105', 'Ragu Ram', 'I', 'Information Technology', '12/02/2014', 'Present', 0),
+(9, 'Stu100', 'Prakash', 'I', 'Computer Science Engineering', '13/02/2014', 'Leave', 0),
+(10, 'Stu101', 'Anbu', 'I', 'Information Technology', '13/02/2014', 'Absent', 0),
+(11, 'Stu104', 'Arun Kumar K', 'I', 'Computer Science Engineering', '13/02/2014', 'Present', 0),
+(12, 'Stu105', 'Ragu Ram', 'I', 'Information Technology', '13/02/2014', 'Absent', 0),
+(36, 'Stu105', 'Ragu Ram', 'I', 'Information Technology', '14/02/2014', 'Permisson', 0),
+(34, 'Stu101', 'Anbu', 'I', 'Information Technology', '14/02/2014', 'Absent', 0),
+(35, 'Stu104', 'Arun Kumar K', 'I', 'Computer Science Engineering', '14/02/2014', 'Leave', 0),
+(17, 'Stu100', 'Prakash', 'I', 'Computer Science Engineering', '10/02/2014', 'Present', 0),
+(18, 'Stu101', 'Anbu', 'I', 'Information Technology', '10/02/2014', 'Permisson', 0),
+(19, 'Stu104', 'Arun Kumar K', 'I', 'Computer Science Engineering', '10/02/2014', 'Leave', 0),
+(20, 'Stu105', 'Ragu Ram', 'I', 'Information Technology', '10/02/2014', 'Present', 0),
+(21, 'Stu100', 'Prakash', 'I', 'Computer Science Engineering', '09/02/2014', 'Absent', 0),
+(22, 'Stu101', 'Anbu', 'I', 'Information Technology', '09/02/2014', 'Absent', 0),
+(23, 'Stu104', 'Arun Kumar K', 'I', 'Computer Science Engineering', '09/02/2014', 'Present', 0),
+(24, 'Stu105', 'Ragu Ram', 'I', 'Information Technology', '09/02/2014', 'Present', 0),
+(25, 'Stu100', 'Prakash', 'I', 'Computer Science Engineering', '08/02/2014', 'Present', 0),
+(26, 'Stu101', 'Anbu', 'I', 'Information Technology', '08/02/2014', 'Present', 0),
+(27, 'Stu104', 'Arun Kumar K', 'I', 'Computer Science Engineering', '08/02/2014', 'Present', 0),
+(28, 'Stu105', 'Ragu Ram', 'I', 'Information Technology', '08/02/2014', 'Present', 0),
+(33, 'Stu100', 'Prakash', 'I', 'Computer Science Engineering', '14/02/2014', 'Present', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `veg`
+--
+
+CREATE TABLE `veg` (
+  `sno` int(11) NOT NULL,
+  `veg` mediumtext NOT NULL,
+  `amont` mediumtext NOT NULL,
+  `status` tinyint(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `veg`
+--
+
+INSERT INTO `veg` (`sno`, `veg`, `amont`, `status`) VALUES
+(1, 'potato', '30', 0),
+(2, 'tomato', '20', 0),
+(3, 'Large Onion', '30', 0),
+(4, 'Small Onion', '40', 0),
+(5, 'Chilli', '30', 0),
+(6, 'Carrot', '50', 0),
+(7, 'Beans', '60', 0),
+(8, 'Drum Stick', '40', 0),
+(9, 'Brinjal', '30', 0),
+(10, 'Cabbage', '40', 0),
+(11, 'Ginger', '70', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `gatpass`
+--
+ALTER TABLE `gatpass`
+  ADD PRIMARY KEY (`gatpass_id`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `messagebox`
+--
+ALTER TABLE `messagebox`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `mess_menu`
+--
+ALTER TABLE `mess_menu`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `others`
+--
+ALTER TABLE `others`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `outstu`
+--
+ALTER TABLE `outstu`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `price`
+--
+ALTER TABLE `price`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `room`
+--
+ALTER TABLE `room`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `roomallocate`
+--
+ALTER TABLE `roomallocate`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `setting`
+--
+ALTER TABLE `setting`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `site_details`
+--
+ALTER TABLE `site_details`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `staff`
+--
+ALTER TABLE `staff`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `stu_atten`
+--
+ALTER TABLE `stu_atten`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `veg`
+--
+ALTER TABLE `veg`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `sno` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `gatpass`
+--
+ALTER TABLE `gatpass`
+  MODIFY `gatpass_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `login`
+--
+ALTER TABLE `login`
+  MODIFY `sno` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+--
+-- AUTO_INCREMENT for table `messagebox`
+--
+ALTER TABLE `messagebox`
+  MODIFY `sno` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `mess_menu`
+--
+ALTER TABLE `mess_menu`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT for table `others`
+--
+ALTER TABLE `others`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `outstu`
+--
+ALTER TABLE `outstu`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `price`
+--
+ALTER TABLE `price`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `room`
+--
+ALTER TABLE `room`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `roomallocate`
+--
+ALTER TABLE `roomallocate`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `setting`
+--
+ALTER TABLE `setting`
+  MODIFY `sno` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `site_details`
+--
+ALTER TABLE `site_details`
+  MODIFY `sno` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+--
+-- AUTO_INCREMENT for table `staff`
+--
+ALTER TABLE `staff`
+  MODIFY `sno` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `sno` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `stu_atten`
+--
+ALTER TABLE `stu_atten`
+  MODIFY `sno` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+--
+-- AUTO_INCREMENT for table `veg`
+--
+ALTER TABLE `veg`
+  MODIFY `sno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,23 @@
+buttons:[
+                        {
+                            extend: 'print',
+
+                            exportOptions: {columns: ':not(.notexport)'}
+                        },
+                        {
+                            extend: 'copyHtml5',
+                            exportOptions: {columns: ':not(.notexport)'}
+                        },
+                        {
+                            extend: 'excelHtml5',
+                            exportOptions: {columns: ':not(.notexport)'}
+                        },
+                        {
+                            extend: 'csvHtml5',
+                            exportOptions: {columns: ':not(.notexport)'}
+                        },
+                        {
+                            extend: 'pdfHtml5',
+                            exportOptions: {columns: ':not(.notexport)'}
+                        },
+                    ],

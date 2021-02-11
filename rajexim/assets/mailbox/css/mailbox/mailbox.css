@@ -1,0 +1,438 @@
+
+.mailbox-bg {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+.label-draft {
+
+    background-color: #394854;
+
+}
+.mailbox-loading {
+    display: inline-block;
+    overflow: hidden;
+    line-height: 43px;
+    white-space: nowrap;
+    max-width: 0;
+    -webkit-transition: max-width .5s;
+    transition: max-width .5s
+}
+.disabled>.mailbox-loading {
+    max-width: 10em;
+    -webkit-transition: max-width .5s;
+    transition: max-width .5s
+}
+.mailbox-loading .fa {
+    animation: none
+}
+.disabled>.mailbox-loading .fa {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear
+}
+@media(min-width:768px) {
+    .mailbox-bg {
+        display: block
+    }
+    #mailbox-bg-list {
+        display: inline-block;
+        padding: 5px;
+        background-color: #fff
+    }
+    .mailbox-bg img {
+        vertical-align: top;
+        width: 64px;
+        cursor: pointer;
+        -webkit-transition: opacity .5s;
+        transition: opacity .5s
+    }
+    .disabled .mailbox-chg-bg,
+    .mailbox-bg .active {
+        opacity: .3;
+        cursor: default;
+        -webkit-transition: opacity .5s;
+        transition: opacity .5s
+    }
+}
+input {
+    background-image: none!important
+}
+.mailbox-mailbox-btn.list-group-item {
+    padding: 20px 15px
+}
+.mailbox-mailbox-btn {
+    text-align: center
+}
+.mailbox-mailbox-btn .btn {
+    margin: 7px 7px 7px 0
+}
+.mailbox-mailbox-btn .btn:not(.btn-icon) {
+    min-width: 17.5%
+}
+.mailbox-mailbox-btn-group .btn-group {
+    margin: 7px 7px 7px 0
+}
+.mailbox-mailbox-modal .modal {
+    bottom: auto;
+    display: block;
+    left: auto;
+    position: relative;
+    right: auto;
+    top: auto;
+    z-index: 1;
+    overflow: hidden
+}
+.mailbox-mailbox-modal .modal-dialog {
+    left: auto;
+    color: #707980;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto
+}
+.mailbox-mailbox-label-badge {
+    text-align: center
+}
+.mailbox-mailbox-label-badge .label,
+.mailbox-mailbox-label-badge .badge {
+    float: none;
+    margin: 0 7px 10px 0;
+    display: inline-block
+}
+.mailbox-mailbox-padding>tr>td>div {
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    font-weight: 500;
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-color: rgba(100, 42, 156, 0.27)
+}
+.mailbox-mailbox-padding>tr>td>div>div {
+    width: 100%;
+    height: 100%;
+    line-height: normal;
+    background-color: #fff;
+    border: 1px solid rgba(20, 126, 255, 0.53);
+    vertical-align: middle
+}
+.mailbox-mailbox-padding>tr>td>div>div:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    vertical-align: middle
+}
+.mailbox-mailbox-margin>tr>td>div {
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    font-weight: 500;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-color: #f4df60
+}
+.mailbox-mailbox-margin>tr>td>div>div {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    line-height: normal;
+    background-color: #fff;
+    border: 1px solid rgba(20, 126, 255, 0.53);
+    vertical-align: middle
+}
+.mailbox-mailbox-margin>tr>td>div>div:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    vertical-align: middle
+}
+.mailbox-mailbox-background>tr>td>div {
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    font-weight: 500;
+    position: relative
+}
+.mailbox-mailbox-border div {
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+    font-weight: 500;
+    border-color: rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .05)
+}
+.mailbox-mailbox-icon span {
+    background-color: rgba(0, 0, 0, .1)
+}
+.mailbox-mailbox-text p {
+    width: 125px;
+    min-height: 35px;
+    padding: 5px;
+    margin-bottom: 0
+}
+@media(min-width:992px) {
+    .mailbox-mailbox-text p {
+        width: 175px
+    }
+}
+.mailbox-mailbox-text td:nth-child(2) {
+    text-align: center
+}
+.mailbox-mailbox-text p:not(.bg-dark) {
+    background-color: rgba(0, 0, 0, .05)
+}
+.mailbox-icon-list i {
+    display: inline-block;
+    padding: 10px;
+    width: 2em;
+    text-align: center;
+    font-size: 2em;
+    vertical-align: middle;
+    color: #444
+}
+.mailbox-icon-list .mailbox-icon {
+    display: block;
+    margin: 3px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: pointer
+}
+.mailbox-icon-list .mailbox-icon:hover {
+    color: #2b2b2b;
+    background-color: rgba(0, 0, 0, .09)
+}
+.mailbox-icon-list .mailbox-icon span {
+    display: inline-block
+}
+.mailbox-set {
+    display: none
+}
+@media(min-width:1280px) {
+    .mailbox-set {
+        background-color: #fff;
+        color: #5e5e5e;
+        display: block;
+        position: fixed;
+        left: 75px;
+        right: 75px;
+        top: 0;
+        z-index: 99999;
+        margin: 0 auto;
+        width: auto;
+        max-width: 1810px
+    }
+    .effect ~ .mailbox-set .collapsing {
+        transition-duration: .35s
+    }
+    .mailbox-set .mar-btm {
+        margin-bottom: 14px
+    }
+    .mailbox-set-body>.mailbox-set-content {
+        padding: 10px 10px 20px;
+        border-bottom: 5px solid #3b4146
+    }
+    .mailbox-set-body .icon-wrap {
+        padding: 7px
+    }
+    .mailbox-set-body.in {
+        max-height: 600px;
+        z-index: 20;
+        box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.15)
+    }
+    #mailbox-set-btn {
+        background-color: #3b4146;
+        color: #fff;
+        border: 0;
+        position: absolute;
+        left: 50%;
+        margin-left: -23px;
+        margin-top: -2px
+    }
+}
+.mailbox-bg-boxed {
+    display: none
+}
+.mailbox-bg-boxed.open {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    padding: 10px 20px;
+    background-color: #fff;
+    z-index: 2
+}
+.mailbox-bg-boxed-content {
+    max-height: 380px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+}
+.mailbox-bg-boxed-content .text-justify>.thumbnail {
+    font-size: 7px;
+    margin-bottom: 5px;
+    width: 32%
+}
+@media(min-width:1500px) {
+    .mailbox-bg-boxed-content .text-justify>.thumbnail {
+        font-size: 7px;
+        margin-bottom: 5px;
+        width: 24%
+    }
+}
+.mailbox-bg-boxed-content .text-justify>.thumbnail {
+    font-size: 7px;
+    margin-bottom: 5px
+}
+.mailbox-bg-boxed-content .text-justify>.thumbnail>img {
+    width: 100%;
+    height: 3vw;
+    max-height: 55px
+}
+.mailbox-bg-boxed-footer {
+    height: 15%;
+    max-height: 50px;
+    padding-top: 10px
+}
+.mailbox-justify-theme {
+    text-align: justify;
+    font-size: 10px
+}
+.mailbox-justify-theme:after {
+    content: '';
+    display: inline-block;
+    width: 100%
+}
+.mailbox-theme {
+    display: inline-block;
+    width: 27%;
+    height: 50px;
+    background-color: #f4f4f4;
+    position: relative;
+    border: 1px solid #d9d9d9;
+    transition: all .2s
+}
+.mailbox-theme:hover {
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+    border: 0;
+    transition: all .2s
+}
+.mailbox-theme.disabled {
+    cursor: default
+}
+.mailbox-theme-brand {
+    width: 20px;
+    height: 15px;
+    float: left;
+    position: relative;
+    opacity: 1;
+    z-index: 2;
+    border-right: 1px solid rgba(0, 0, 0, .1)
+}
+.mailbox-theme-head {
+    margin-left: 20px;
+    height: 15px;
+    opacity: 1;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+}
+.mailbox-theme-nav {
+    width: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    background: #5f5f5f;
+    border-right: 1px solid rgba(0, 0, 0, .1);
+    z-index: 1
+}
+.mailbox-a-light .mailbox-theme-nav,
+.mailbox-b-light .mailbox-theme-nav {
+    background-color: #eaeaea
+}
+.mailbox-a-light .mailbox-theme-brand,
+.mailbox-b-light .mailbox-theme-brand,
+.mailbox-c-light .mailbox-theme-nav,
+.mailbox-a-light .mailbox-theme-head {
+    background: #fff
+}
+.mailbox-a-light .mailbox-theme-brand,
+.mailbox-c-light .mailbox-theme-brand {
+    border-right: 0
+}
+.mailbox-b-light .mailbox-theme-brand,
+.mailbox-a-light .mailbox-theme-brand {
+    border-bottom: 1px solid rgba(0, 0, 0, .1)
+}
+.mailbox-b-ocean .mailbox-theme-brand,
+.mailbox-c-ocean .mailbox-theme-nav,
+.mailbox-a-ocean .mailbox-theme-head {
+    background: #5aaedc
+}
+.mailbox-b-lime .mailbox-theme-brand,
+.mailbox-c-lime .mailbox-theme-nav,
+.mailbox-a-lime .mailbox-theme-head {
+    background: #8dba60
+}
+.mailbox-b-purple .mailbox-theme-brand,
+.mailbox-c-purple .mailbox-theme-nav,
+.mailbox-a-purple .mailbox-theme-head {
+    background: #995b92
+}
+.mailbox-b-dust .mailbox-theme-brand,
+.mailbox-c-dust .mailbox-theme-nav,
+.mailbox-a-dust .mailbox-theme-head {
+    background: #f77b5b
+}
+.mailbox-b-mint .mailbox-theme-brand,
+.mailbox-c-mint .mailbox-theme-nav,
+.mailbox-a-mint .mailbox-theme-head {
+    background: #40c4a7
+}
+.mailbox-b-yellow .mailbox-theme-brand,
+.mailbox-c-yellow .mailbox-theme-nav,
+.mailbox-a-yellow .mailbox-theme-head {
+    background: #f1da71
+}
+.mailbox-b-prickly-pear .mailbox-theme-brand,
+.mailbox-c-prickly-pear .mailbox-theme-nav,
+.mailbox-a-prickly-pear .mailbox-theme-head {
+    background: #b25e71
+}
+.mailbox-b-coffee .mailbox-theme-brand,
+.mailbox-c-coffee .mailbox-theme-nav,
+.mailbox-a-coffee .mailbox-theme-head {
+    background: #766d51
+}
+.mailbox-b-well-red .mailbox-theme-brand,
+.mailbox-c-well-red .mailbox-theme-nav,
+.mailbox-a-well-red .mailbox-theme-head {
+    background: #da5959
+}
+.mailbox-a-navy .mailbox-theme-brand,
+.mailbox-a-navy .mailbox-theme-nav,
+.mailbox-b-navy .mailbox-theme-nav {
+    background: #fff;
+    border-bottom: 0
+}
+.mailbox-b-navy .mailbox-theme-brand,
+.mailbox-c-navy .mailbox-theme-nav,
+.mailbox-a-navy .mailbox-theme-head {
+    background: #566472
+}
+.mailbox-b-dark .mailbox-theme-brand,
+.mailbox-c-dark .mailbox-theme-nav,
+.mailbox-a-dark .mailbox-theme-head {
+    background: #4d5052
+}
